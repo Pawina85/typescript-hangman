@@ -38,17 +38,30 @@ function App() {
     
 
     return (
-  <div style={{ maxWidth: "800px", display: "flex", flexDirection: "column", gap: "2rem", margin: "0 auto", alignItems: "center" }}>
-    <div style={{ fontSize: "2rem", textAlign: "center" }}>
+  <div style={{
+    maxWidth: "800px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "2rem",
+    margin: "0 auto",
+    alignItems: "center"
+  }}>
+    
+    <div style={{ fontSize: "2rem" }}>
       Lose Win
-      <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-      <HangmanWord guessedLetters={guessdLetters} wordToGuess={wordToGuess} />
     </div>
+
+    <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+
+    <HangmanWord guessedLetters={guessdLetters} wordToGuess={wordToGuess} />
+
     <div style={{ alignSelf: "stretch" }}>
-      <Keyboard />
+      <Keyboard addGuessedLetter={addGuessedLetters} />
     </div>
+
   </div>
-    )
+)
+
 }
 
 export default App
